@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Mail, Send, MessageCircle, CheckCircle, AlertCircle, Loader } from 'lucide-react';
 
@@ -15,12 +15,12 @@ export default function Contact() {
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setFormState('loading');
     setErrorMsg('');
