@@ -1,10 +1,13 @@
-import { motion } from 'motion/react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Check, Shield, Star, Crown, MessageCircle } from 'lucide-react';
+
+const USD_RATE = 278; // 1 USD = 278 PKR
 
 const plans = [
   {
     name: 'Recommended Website Package',
-    price: '18,500',
+    pricePKR: 18500,
     icon: Star,
     description: 'Perfect for startups, personal brands, and small businesses looking for a modern and professional online presence.',
     features: [
@@ -18,13 +21,13 @@ const plans = [
       'WhatsApp Chat Button',
       'Smooth Animations & Effects',
       'Professional Landing Page Design',
-      '30 Days Free Support'
+      '30 Days Free Support',
     ],
-    recommended: true
+    recommended: true,
   },
   {
     name: 'Professional Business Package',
-    price: '25,000',
+    pricePKR: 25000,
     icon: Shield,
     description: 'Best for growing businesses and agencies needing a premium online presence.',
     features: [
@@ -39,13 +42,13 @@ const plans = [
       'Testimonials & Reviews Section',
       'Booking / Inquiry Forms',
       'Google Maps Integration',
-      '2 Months Free Support'
+      '2 Months Free Support',
     ],
-    recommended: false
+    recommended: false,
   },
   {
     name: 'Premium Elite Package',
-    price: '35,550',
+    pricePKR: 35550,
     icon: Crown,
     description: 'For brands that want a luxury, high-converting, professional website.',
     features: [
@@ -62,18 +65,29 @@ const plans = [
       'Priority Support',
       '2 Months Free Support',
       'Premium Visual Effects & Interactions',
-      'SEO + Conversion Focused Structure'
+      'SEO + Conversion Focused Structure',
     ],
-    recommended: false
-  }
+    recommended: false,
+  },
 ];
 
+function formatPKR(amount: number) {
+  return amount.toLocaleString('en-PK');
+}
+
+function formatUSD(pkr: number) {
+  return (pkr / USD_RATE).toFixed(0);
+}
+
 export default function Pricing() {
+  const [currency, setCurrency] = useState<'PKR' | 'USD'>('PKR');
+
   return (
     <section id="pricing" className="py-24 bg-black">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <motion.h2 
+        {/* Heading */}
+        <div className="text-center mb-10">
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -86,26 +100,59 @@ export default function Pricing() {
           </p>
         </div>
 
+        {/* Currency Toggle */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex items-center justify-center mb-12"
+        >
+          <div className="relative flex items-center bg-zinc-900 border border-white/10 rounded-full p-1 gap-1">
+            {(['PKR', 'USD'] as const).map((c) => (
+              <button
+                key={c}
+                onClick={() => setCurrency(c)}
+                className="relative z-10 px-6 py-2 rounded-full text-sm font-bold transition-colors duration-200 focus:outline-none"
+                style={{ color: currency === c ? '#fff' : '#71717a' }}
+              >
+                {currency === c && (
+                  <motion.span
+                    layoutId="currency-pill"
+                    className="absolute inset-0 rounded-full bg-brand"
+                    style={{ zIndex: -1 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                  />
+                )}
+                {c === 'PKR' ? '🇵🇰 PKR' : '🇺🇸 USD'}
+              </button>
+            ))}
+          </div>
+          <span className="ml-4 text-xs text-zinc-500 hidden sm:block">
+            1 USD = 278 PKR
+          </span>
+        </motion.div>
+
+        {/* Pricing Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {plans.map((plan, i) => (
             <motion.div
               key={plan.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ 
-                scale: 1.02, 
+              whileHover={{
+                scale: 1.02,
                 borderColor: '#2563eb',
                 zIndex: 10,
-                backgroundColor: 'rgba(24, 24, 27, 1)'
+                backgroundColor: 'rgba(24, 24, 27, 1)',
               }}
               viewport={{ once: true }}
-              transition={{ 
-                type: 'spring', 
-                stiffness: 300, 
+              transition={{
+                type: 'spring',
+                stiffness: 300,
                 damping: 20,
-                delay: i * 0.1 
+                delay: i * 0.1,
               }}
-              className={`relative p-8 rounded-[2.5rem] border transition-colors duration-300 flex flex-col bg-zinc-900 border-white/5`}
+              className="relative p-8 rounded-[2.5rem] border transition-colors duration-300 flex flex-col bg-zinc-900 border-white/5"
             >
               {plan.recommended && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full">
@@ -118,12 +165,44 @@ export default function Pricing() {
                   <plan.icon size={24} />
                 </div>
                 <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
-                <p className="text-zinc-500 text-sm leading-relaxed mb-6">
-                  {plan.description}
-                </p>
-                <div className="flex items-baseline space-x-2">
-                  <span className="text-4xl font-black">Rs. {plan.price}</span>
+                <p className="text-zinc-500 text-sm leading-relaxed mb-6">{plan.description}</p>
+
+                {/* Animated Price */}
+                <div className="flex items-baseline space-x-2 min-h-[48px]">
+                  <AnimatePresence mode="wait">
+                    {currency === 'PKR' ? (
+                      <motion.div
+                        key="pkr"
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -8 }}
+                        transition={{ duration: 0.2 }}
+                        className="flex items-baseline space-x-2"
+                      >
+                        <span className="text-4xl font-black">Rs. {formatPKR(plan.pricePKR)}</span>
+                      </motion.div>
+                    ) : (
+                      <motion.div
+                        key="usd"
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -8 }}
+                        transition={{ duration: 0.2 }}
+                        className="flex items-baseline space-x-2"
+                      >
+                        <span className="text-4xl font-black">${formatUSD(plan.pricePKR)}</span>
+                        <span className="text-zinc-500 text-sm font-medium">USD</span>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
+
+                {/* Equivalent in other currency */}
+                <p className="text-zinc-600 text-xs mt-1">
+                  {currency === 'PKR'
+                    ? `≈ $${formatUSD(plan.pricePKR)} USD`
+                    : `≈ Rs. ${formatPKR(plan.pricePKR)} PKR`}
+                </p>
               </div>
 
               <div className="flex-grow space-y-4 mb-10">
