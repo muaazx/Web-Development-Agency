@@ -127,9 +127,6 @@ export default function Pricing() {
               </button>
             ))}
           </div>
-          <span className="ml-4 text-xs text-zinc-500 hidden sm:block">
-            1 USD = 278 PKR
-          </span>
         </motion.div>
 
         {/* Pricing Cards */}
