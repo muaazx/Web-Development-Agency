@@ -10,7 +10,7 @@ export default function Contact() {
   const [form, setForm] = useState({
     name: '',
     email: '',
-    subject: 'Web Development',
+    subject: 'Premium Web Design',
     message: '',
   });
 
@@ -39,7 +39,7 @@ export default function Contact() {
       }
 
       setFormState('success');
-      setForm({ name: '', email: '', subject: 'Web Development', message: '' });
+      setForm({ name: '', email: '', subject: 'Premium Web Design', message: '' });
     } catch (err: unknown) {
       setErrorMsg(err instanceof Error ? err.message : 'Failed to send message.');
       setFormState('error');
@@ -163,11 +163,10 @@ export default function Contact() {
                       onChange={handleChange}
                       className="w-full bg-white border border-white/10 rounded-2xl p-5 text-black focus:border-brand outline-none transition-colors appearance-none font-medium"
                     >
-                      <option>Web Development</option>
-                      <option>UI/UX Design</option>
-                      <option>Redesign Website</option>
-                      <option>Bugs Fix &amp; Maintenance</option>
+                      <option>Premium Web Design</option>
+                      <option>Custom Web Development</option>
                       <option>E-commerce Solution</option>
+                      <option>Digital Marketing &amp; Meta Ads</option>
                       <option>SEO Optimization</option>
                       <option>Other</option>
                     </select>

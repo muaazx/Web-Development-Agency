@@ -1,13 +1,9 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { Check, Shield, Star, Crown, MessageCircle } from 'lucide-react';
-
-const USD_RATE = 278; // 1 USD = 278 PKR
 
 const plans = [
   {
     name: 'Recommended Website Package',
-    pricePKR: 18500,
     icon: Star,
     description: 'Perfect for startups, personal brands, and small businesses looking for a modern and professional online presence.',
     features: [
@@ -27,7 +23,6 @@ const plans = [
   },
   {
     name: 'Professional Business Package',
-    pricePKR: 25000,
     icon: Shield,
     description: 'Best for growing businesses and agencies needing a premium online presence.',
     features: [
@@ -48,7 +43,6 @@ const plans = [
   },
   {
     name: 'Premium Elite Package',
-    pricePKR: 35550,
     icon: Crown,
     description: 'For brands that want a luxury, high-converting, professional website.',
     features: [
@@ -71,65 +65,26 @@ const plans = [
   },
 ];
 
-function formatPKR(amount: number) {
-  return amount.toLocaleString('en-PK');
-}
-
-function formatUSD(pkr: number) {
-  return (pkr / USD_RATE).toFixed(0);
-}
-
 export default function Pricing() {
-  const [currency, setCurrency] = useState<'PKR' | 'USD'>('PKR');
-
   return (
-    <section id="pricing" className="py-24 bg-black">
+    <section id="packages" className="py-24 bg-black">
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-4xl lg:text-5xl font-bold mb-6"
           >
-            Choose Your <span className="text-brand">Package</span>
+            Our Service <span className="text-brand">Packages</span>
           </motion.h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Transparent pricing for world-class digital solutions. Choose the plan that fits your vision.
+            Select the package that fits your goals, and request a tailored quote for your business growth.
           </p>
         </div>
 
-        {/* Currency Toggle */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex items-center justify-center mb-12"
-        >
-          <div className="relative flex items-center bg-zinc-900 border border-white/10 rounded-full p-1 gap-1">
-            {(['PKR', 'USD'] as const).map((c) => (
-              <button
-                key={c}
-                onClick={() => setCurrency(c)}
-                className="relative z-10 px-6 py-2 rounded-full text-sm font-bold transition-colors duration-200 focus:outline-none"
-                style={{ color: currency === c ? '#fff' : '#71717a' }}
-              >
-                {currency === c && (
-                  <motion.span
-                    layoutId="currency-pill"
-                    className="absolute inset-0 rounded-full bg-brand"
-                    style={{ zIndex: -1 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-                  />
-                )}
-                {c === 'PKR' ? '🇵🇰 PKR' : '🇺🇸 USD'}
-              </button>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Pricing Cards */}
+        {/* Packages Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {plans.map((plan, i) => (
             <motion.div
@@ -164,42 +119,11 @@ export default function Pricing() {
                 <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
                 <p className="text-zinc-500 text-sm leading-relaxed mb-6">{plan.description}</p>
 
-                {/* Animated Price */}
-                <div className="flex items-baseline space-x-2 min-h-[48px]">
-                  <AnimatePresence mode="wait">
-                    {currency === 'PKR' ? (
-                      <motion.div
-                        key="pkr"
-                        initial={{ opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -8 }}
-                        transition={{ duration: 0.2 }}
-                        className="flex items-baseline space-x-2"
-                      >
-                        <span className="text-4xl font-black">Rs. {formatPKR(plan.pricePKR)}</span>
-                      </motion.div>
-                    ) : (
-                      <motion.div
-                        key="usd"
-                        initial={{ opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -8 }}
-                        transition={{ duration: 0.2 }}
-                        className="flex items-baseline space-x-2"
-                      >
-                        <span className="text-4xl font-black">${formatUSD(plan.pricePKR)}</span>
-                        <span className="text-zinc-500 text-sm font-medium">USD</span>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                {/* Custom Quote Notice */}
+                <div className="border-t border-white/5 pt-4">
+                  <span className="text-xs uppercase tracking-widest text-brand font-bold">Custom Pricing</span>
+                  <p className="text-zinc-400 text-sm mt-1">Get a tailored quote based on your requirements</p>
                 </div>
-
-                {/* Equivalent in other currency */}
-                <p className="text-zinc-600 text-xs mt-1">
-                  {currency === 'PKR'
-                    ? `≈ $${formatUSD(plan.pricePKR)} USD`
-                    : `≈ Rs. ${formatPKR(plan.pricePKR)} PKR`}
-                </p>
               </div>
 
               <div className="flex-grow space-y-4 mb-10">
@@ -214,12 +138,14 @@ export default function Pricing() {
               </div>
 
               <a
-                href="https://wa.me/923197765190"
+                href={`https://wa.me/923197765190?text=${encodeURIComponent(
+                  `Hi NovaWeb, I would like to request a quote for the "${plan.name}".`
+                )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-4 rounded-2xl font-bold flex items-center justify-center space-x-2 transition-all bg-brand text-white hover:bg-brand-light shadow-lg shadow-brand/20"
               >
-                <span>Get Started</span>
+                <span>Get a Quote</span>
                 <MessageCircle size={18} />
               </a>
             </motion.div>
@@ -229,3 +155,4 @@ export default function Pricing() {
     </section>
   );
 }
+

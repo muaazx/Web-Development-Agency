@@ -1,42 +1,42 @@
 import { motion } from 'motion/react';
-import { Layout, Palette, ShoppingBag, Send, Search, Terminal } from 'lucide-react';
+import { Layout, Palette, ShoppingBag, Search, Terminal, Megaphone, TrendingUp } from 'lucide-react';
 
 const services = [
   {
-    title: 'Web Development',
-    description: 'High-performance, scalable web applications built with the latest technologies.',
-    icon: Terminal,
-    color: 'text-blue-500'
-  },
-  {
-    title: 'UI/UX Design',
-    description: 'Bespoke interfaces designed for seamless user journeys and brand impact.',
+    title: 'Premium Web Design',
+    description: 'Bespoke, visual-first interfaces designed for maximum brand impact, responsiveness, and premium user experiences.',
     icon: Palette,
     color: 'text-purple-500'
   },
   {
-    title: 'E-commerce',
-    description: 'Custom Shopify and storefront solutions that drive sales and loyalty.',
+    title: 'Custom Web Development',
+    description: 'High-performance, secure, and scalable web applications built with modern frameworks like React and Next.js.',
+    icon: Terminal,
+    color: 'text-blue-500'
+  },
+  {
+    title: 'E-commerce Solutions',
+    description: 'Custom Shopify setups, optimized checkout flows, and payment integrations that drive revenue and loyalty.',
     icon: ShoppingBag,
     color: 'text-pink-500'
   },
   {
-    title: 'Landing Pages',
-    description: 'Focused, high-converting one-pagers that turn visitors into customers.',
-    icon: Layout,
-    color: 'text-emerald-500'
+    title: 'Digital Marketing & Meta Ads',
+    description: 'Highly-targeted Facebook, Instagram, and social campaigns engineered to scale lead generation and sales.',
+    icon: Megaphone,
+    color: 'text-rose-500'
   },
   {
-    title: 'SEO Strategy',
-    description: 'Technical optimization and content strategies to dominate search results.',
+    title: 'SEO & Search Strategy',
+    description: 'Technical page-speed optimization, off-page strategies, and targeted keywords to dominate search engine results.',
     icon: Search,
     color: 'text-amber-500'
   },
   {
-    title: 'Consultancy',
-    description: 'Strategic advice on tech stack, product-market fit, and digital growth.',
-    icon: Send,
-    color: 'text-indigo-500'
+    title: 'Conversion Optimization',
+    description: 'Analytical reviews, A/B testing, and high-performance landing pages tuned to turn visitors into brand advocates.',
+    icon: TrendingUp,
+    color: 'text-emerald-500'
   }
 ];
 
@@ -58,8 +58,8 @@ export default function Services() {
               We provide a full suite of digital solutions tailored to your business goals. From conceptual design to robust deployment.
             </p>
           </div>
-          <a href="#pricing" className="text-sm font-bold uppercase tracking-widest text-brand hover:text-brand-light transition-colors flex items-center">
-            View Pricing <Layout className="ml-2" size={16} />
+          <a href="#packages" className="text-sm font-bold uppercase tracking-widest text-brand hover:text-brand-light transition-colors flex items-center">
+            View Packages <Layout className="ml-2" size={16} />
           </a>
         </div>
 

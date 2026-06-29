@@ -33,10 +33,10 @@ export default function Footer() {
             <div>
               <h4 className="text-sm font-bold uppercase tracking-widest mb-6">Services</h4>
               <ul className="space-y-4">
-                <li><a href="#" className="text-gray-500 hover:text-white transition-colors">Web Development</a></li>
-                <li><a href="#" className="text-gray-500 hover:text-white transition-colors">UI/UX Design</a></li>
-                <li><a href="#" className="text-gray-500 hover:text-white transition-colors">Shopify Support</a></li>
-                <li><a href="#" className="text-gray-500 hover:text-white transition-colors">SEO Optimization</a></li>
+                <li><a href="#services" className="text-gray-500 hover:text-white transition-colors">Premium Web Design</a></li>
+                <li><a href="#services" className="text-gray-500 hover:text-white transition-colors">Custom Web Development</a></li>
+                <li><a href="#services" className="text-gray-500 hover:text-white transition-colors">Digital Marketing &amp; Meta Ads</a></li>
+                <li><a href="#services" className="text-gray-500 hover:text-white transition-colors">SEO &amp; Search Strategy</a></li>
               </ul>
             </div>
           </div>
