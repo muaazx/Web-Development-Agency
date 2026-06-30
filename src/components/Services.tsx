@@ -54,7 +54,7 @@ export default function Services() {
           waveAmplitude={1}
           particleSize={2}
           lerpSpeed={0.1}
-          color="#FF9FFC"
+          color="#2563eb"
           autoAnimate={false}
           particleVariance={1}
           rotationSpeed={0}
