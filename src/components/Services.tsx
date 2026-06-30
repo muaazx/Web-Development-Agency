@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Layout, Palette, ShoppingBag, Search, Terminal, Megaphone, TrendingUp } from 'lucide-react';
+import Antigravity from './Antigravity';
 
 const services = [
   {
@@ -42,8 +43,29 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-[#050505]">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="services" className="relative py-24 bg-[#050505] overflow-hidden">
+      {/* Background 3D Antigravity Particle Field */}
+      <div className="absolute inset-0 z-0 opacity-40">
+        <Antigravity
+          count={300}
+          magnetRadius={10}
+          ringRadius={10}
+          waveSpeed={0.4}
+          waveAmplitude={1}
+          particleSize={2}
+          lerpSpeed={0.1}
+          color="#FF9FFC"
+          autoAnimate={false}
+          particleVariance={1}
+          rotationSpeed={0}
+          depthFactor={1}
+          pulseSpeed={3}
+          particleShape="capsule"
+          fieldStrength={10}
+        />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div className="max-w-2xl">
             <motion.h2 
