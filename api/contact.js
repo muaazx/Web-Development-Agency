@@ -16,10 +16,10 @@ module.exports = async function handler(req, res) {
 
   const resend = new Resend(apiKey);
   const body = req.body || {};
-  const { name, email, subject, message } = body;
+  const { name, email, whatsapp, subject, message } = body;
 
-  if (!name || !email || !message) {
-    return res.status(400).json({ error: 'Name, email, and message are required.' });
+  if (!name || !email || !whatsapp || !message) {
+    return res.status(400).json({ error: 'Name, email, WhatsApp number, and message are required.' });
   }
 
   try {
@@ -37,6 +37,8 @@ module.exports = async function handler(req, res) {
         '<td style="padding:10px 0;border-bottom:1px solid #27272a;font-weight:bold;">' + name + '</td></tr>' +
         '<tr><td style="padding:10px 0;border-bottom:1px solid #27272a;color:#a1a1aa;font-size:13px;">EMAIL</td>' +
         '<td style="padding:10px 0;border-bottom:1px solid #27272a;">' + email + '</td></tr>' +
+        '<tr><td style="padding:10px 0;border-bottom:1px solid #27272a;color:#a1a1aa;font-size:13px;">WHATSAPP</td>' +
+        '<td style="padding:10px 0;border-bottom:1px solid #27272a;">' + whatsapp + '</td></tr>' +
         '<tr><td style="padding:10px 0;border-bottom:1px solid #27272a;color:#a1a1aa;font-size:13px;">SERVICE</td>' +
         '<td style="padding:10px 0;border-bottom:1px solid #27272a;">' + (subject || 'Not specified') + '</td></tr>' +
         '<tr><td style="padding:10px 0;color:#a1a1aa;font-size:13px;vertical-align:top;">MESSAGE</td>' +

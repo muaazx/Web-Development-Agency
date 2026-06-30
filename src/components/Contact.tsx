@@ -10,6 +10,7 @@ export default function Contact() {
   const [form, setForm] = useState({
     name: '',
     email: '',
+    whatsapp: '',
     subject: 'Premium Web Design',
     message: '',
   });
@@ -39,7 +40,7 @@ export default function Contact() {
       }
 
       setFormState('success');
-      setForm({ name: '', email: '', subject: 'Premium Web Design', message: '' });
+      setForm({ name: '', email: '', whatsapp: '', subject: 'Premium Web Design', message: '' });
     } catch (err: unknown) {
       setErrorMsg(err instanceof Error ? err.message : 'Failed to send message.');
       setFormState('error');
@@ -155,21 +156,35 @@ export default function Contact() {
                       />
                     </div>
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 ml-2">Service</label>
-                    <select
-                      name="subject"
-                      value={form.subject}
-                      onChange={handleChange}
-                      className="w-full bg-white border border-white/10 rounded-2xl p-5 text-black focus:border-brand outline-none transition-colors appearance-none font-medium"
-                    >
-                      <option>Premium Web Design</option>
-                      <option>Custom Web Development</option>
-                      <option>E-commerce Solution</option>
-                      <option>Digital Marketing &amp; Meta Ads</option>
-                      <option>SEO Optimization</option>
-                      <option>Other</option>
-                    </select>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 ml-2">WhatsApp Number</label>
+                      <input
+                        type="tel"
+                        name="whatsapp"
+                        value={form.whatsapp}
+                        onChange={handleChange}
+                        required
+                        className="w-full bg-white/5 border border-white/10 rounded-2xl p-5 focus:border-brand outline-none transition-colors"
+                        placeholder="+92 300 1234567"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 ml-2">Service</label>
+                      <select
+                        name="subject"
+                        value={form.subject}
+                        onChange={handleChange}
+                        className="w-full bg-white border border-white/10 rounded-2xl p-5 text-black focus:border-brand outline-none transition-colors appearance-none font-medium"
+                      >
+                        <option>Premium Web Design</option>
+                        <option>Custom Web Development</option>
+                        <option>E-commerce Solution</option>
+                        <option>Digital Marketing &amp; Meta Ads</option>
+                        <option>SEO Optimization</option>
+                        <option>Other</option>
+                      </select>
+                    </div>
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 ml-2">Message</label>
