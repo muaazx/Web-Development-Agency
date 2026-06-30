@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Layout, Palette, ShoppingBag, Search, Terminal, Megaphone, TrendingUp } from 'lucide-react';
+import ElectricBorder from './ElectricBorder';
 
 const services = [
   {
@@ -63,28 +64,34 @@ export default function Services() {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((service, i) => (
-            <motion.div
+            <ElectricBorder
               key={service.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className={`p-10 bento-card ${i === 0 || i === 3 ? 'md:col-span-2' : ''} flex flex-col justify-between group hover:border-brand/40 transition-all cursor-default`}
+              color="#2563eb"
+              speed={0.8}
+              chaos={0.08}
+              borderRadius={32}
+              className={i === 0 || i === 3 ? 'md:col-span-2' : ''}
             >
-              <div>
-                <div className={`w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-8 text-brand group-hover:scale-110 transition-transform`}>
-                  <service.icon size={28} />
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="p-10 bento-card h-full flex flex-col justify-between group hover:border-brand/40 transition-all cursor-default"
+              >
+                <div>
+                  <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-8 text-brand group-hover:scale-110 transition-transform">
+                    <service.icon size={28} />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 font-display">{service.title}</h3>
+                  <p className="text-zinc-500 leading-relaxed">
+                    {service.description}
+                  </p>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 font-display">{service.title}</h3>
-                <p className="text-zinc-500 leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-              
-
-            </motion.div>
+              </motion.div>
+            </ElectricBorder>
           ))}
         </div>
       </div>
