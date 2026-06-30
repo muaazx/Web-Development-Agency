@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section className="relative pt-32 pb-6 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {/* Main Hero Card */}
           <GlareHover
             width="100%"
@@ -68,7 +68,7 @@ export default function Hero() {
             borderRadius="2rem"
             glareOpacity={0.15}
             glareColor="#2563eb"
-            className="md:col-span-1 md:row-span-1"
+            className="md:col-span-2"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -81,64 +81,7 @@ export default function Hero() {
             </motion.div>
           </GlareHover>
 
-          <div className="md:col-span-1 md:row-span-1 bento-card overflow-hidden h-[160px] relative">
-            <ScrollStack
-              itemDistance={16}
-              itemScale={0.03}
-              itemStackDistance={16}
-              stackPosition="12%"
-              scaleEndPosition="4%"
-              baseScale={0.92}
-              className="h-full w-full"
-            >
-              <ScrollStackItem>
-                <div className="relative w-full h-full overflow-hidden rounded-[2rem]">
-                  <img src="/images/banner1.jpg" alt="Creative Design Layout" className="absolute inset-0 w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent p-4 flex flex-col justify-end">
-                    <span className="text-[9px] font-extrabold uppercase tracking-widest text-brand-light mb-1">UI Inspiration</span>
-                    <h4 className="text-xs font-bold text-white leading-tight">Creative Workspaces</h4>
-                  </div>
-                </div>
-              </ScrollStackItem>
-              <ScrollStackItem>
-                <div className="relative w-full h-full overflow-hidden rounded-[2rem]">
-                  <img src="/images/banner2.jpg" alt="Marketing Assets" className="absolute inset-0 w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent p-4 flex flex-col justify-end">
-                    <span className="text-[9px] font-extrabold uppercase tracking-widest text-brand-light mb-1">Growth Marketing</span>
-                    <h4 className="text-xs font-bold text-white leading-tight">Interactive Campaigns</h4>
-                  </div>
-                </div>
-              </ScrollStackItem>
-              <ScrollStackItem>
-                <div className="relative w-full h-full overflow-hidden rounded-[2rem]">
-                  <img src="/images/banner3.jpg" alt="Modern Typography" className="absolute inset-0 w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent p-4 flex flex-col justify-end">
-                    <span className="text-[9px] font-extrabold uppercase tracking-widest text-brand-light mb-1">Creative Typography</span>
-                    <h4 className="text-xs font-bold text-white leading-tight">High-Contrast Layouts</h4>
-                  </div>
-                </div>
-              </ScrollStackItem>
-              <ScrollStackItem>
-                <div className="relative w-full h-full overflow-hidden rounded-[2rem]">
-                  <img src="/images/banner4.jpg" alt="Technical SEO Analysis" className="absolute inset-0 w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent p-4 flex flex-col justify-end">
-                    <span className="text-[9px] font-extrabold uppercase tracking-widest text-brand-light mb-1">SEO Strategy</span>
-                    <h4 className="text-xs font-bold text-white leading-tight">Organic Optimization</h4>
-                  </div>
-                </div>
-              </ScrollStackItem>
-              <ScrollStackItem>
-                <div className="relative w-full h-full overflow-hidden rounded-[2rem]">
-                  <img src="/images/banner5.jpg" alt="Bespoke Development" className="absolute inset-0 w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent p-4 flex flex-col justify-end">
-                    <span className="text-[9px] font-extrabold uppercase tracking-widest text-brand-light mb-1">Performance Stack</span>
-                    <h4 className="text-xs font-bold text-white leading-tight">React & Vite Systems</h4>
-                  </div>
-                </div>
-              </ScrollStackItem>
-            </ScrollStack>
-          </div>
-
+          {/* CTA / Contact Mini Card */}
           <GlareHover
             width="100%"
             height="auto"
@@ -147,7 +90,7 @@ export default function Hero() {
             borderRadius="2rem"
             glareOpacity={0.2}
             glareColor="#ffffff"
-            className="md:col-span-2 md:row-span-1"
+            className="md:col-span-2"
           >
             <motion.a
               href="https://wa.me/923197765190"
@@ -169,6 +112,65 @@ export default function Hero() {
               </div>
             </motion.a>
           </GlareHover>
+
+          {/* Scroll Stack Banners Card */}
+          <div className="md:col-span-4 bento-card overflow-hidden h-[340px] relative">
+            <ScrollStack
+              itemDistance={24}
+              itemScale={0.04}
+              itemStackDistance={24}
+              stackPosition="12%"
+              scaleEndPosition="4%"
+              baseScale={0.9}
+              className="h-full w-full"
+            >
+              <ScrollStackItem>
+                <div className="relative w-full h-full overflow-hidden rounded-[2rem]">
+                  <img src="/images/banner1.jpg" alt="Creative Design Layout" className="absolute inset-0 w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent p-6 flex flex-col justify-end">
+                    <span className="text-xs font-extrabold uppercase tracking-widest text-brand-light mb-1">UI Inspiration</span>
+                    <h4 className="text-lg font-bold text-white leading-tight">Creative Workspaces</h4>
+                  </div>
+                </div>
+              </ScrollStackItem>
+              <ScrollStackItem>
+                <div className="relative w-full h-full overflow-hidden rounded-[2rem]">
+                  <img src="/images/banner2.jpg" alt="Marketing Assets" className="absolute inset-0 w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent p-6 flex flex-col justify-end">
+                    <span className="text-xs font-extrabold uppercase tracking-widest text-brand-light mb-1">Growth Marketing</span>
+                    <h4 className="text-lg font-bold text-white leading-tight">Interactive Campaigns</h4>
+                  </div>
+                </div>
+              </ScrollStackItem>
+              <ScrollStackItem>
+                <div className="relative w-full h-full overflow-hidden rounded-[2rem]">
+                  <img src="/images/banner3.jpg" alt="Modern Typography" className="absolute inset-0 w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent p-6 flex flex-col justify-end">
+                    <span className="text-xs font-extrabold uppercase tracking-widest text-brand-light mb-1">Creative Typography</span>
+                    <h4 className="text-lg font-bold text-white leading-tight">High-Contrast Layouts</h4>
+                  </div>
+                </div>
+              </ScrollStackItem>
+              <ScrollStackItem>
+                <div className="relative w-full h-full overflow-hidden rounded-[2rem]">
+                  <img src="/images/banner4.jpg" alt="Technical SEO Analysis" className="absolute inset-0 w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent p-6 flex flex-col justify-end">
+                    <span className="text-xs font-extrabold uppercase tracking-widest text-brand-light mb-1">SEO Strategy</span>
+                    <h4 className="text-lg font-bold text-white leading-tight">Organic Optimization</h4>
+                  </div>
+                </div>
+              </ScrollStackItem>
+              <ScrollStackItem>
+                <div className="relative w-full h-full overflow-hidden rounded-[2rem]">
+                  <img src="/images/banner5.jpg" alt="Bespoke Development" className="absolute inset-0 w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent p-6 flex flex-col justify-end">
+                    <span className="text-xs font-extrabold uppercase tracking-widest text-brand-light mb-1">Performance Stack</span>
+                    <h4 className="text-lg font-bold text-white leading-tight">React & Vite Systems</h4>
+                  </div>
+                </div>
+              </ScrollStackItem>
+            </ScrollStack>
+          </div>
         </div>
       </div>
     </section>

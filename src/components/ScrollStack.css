@@ -22,7 +22,7 @@
 }
 
 .scroll-stack-inner {
-  padding: 8px 8px 120px;
+  padding: 16px 16px 240px;
   min-height: 100%;
 }
 
@@ -35,11 +35,11 @@
   will-change: transform, filter;
   backface-visibility: hidden;
   transform-style: preserve-3d;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  height: 110px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+  height: 220px;
   width: 100%;
-  margin: 8px 0;
-  border-radius: 1.5rem;
+  margin: 12px 0;
+  border-radius: 2rem;
   box-sizing: border-box;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
