@@ -39,7 +39,7 @@ export default function Navbar() {
             </motion.a>
           ))}
           <motion.a
-            href="https://wa.me/923197765190"
+            href="https://wa.me/923021414977"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -78,7 +78,7 @@ export default function Navbar() {
             </a>
           ))}
           <a 
-            href="https://wa.me/923197765190"
+            href="https://wa.me/923021414977"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full py-4 bg-brand text-white font-bold rounded-xl text-center"

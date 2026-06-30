@@ -138,7 +138,7 @@ export default function Pricing() {
               </div>
 
               <a
-                href={`https://wa.me/923197765190?text=${encodeURIComponent(
+                href={`https://wa.me/923021414977?text=${encodeURIComponent(
                   `Hi Smart Web Solutions, I would like to request a quote for the "${plan.name}".`
                 )}`}
                 target="_blank"

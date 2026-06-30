@@ -76,13 +76,13 @@ export default function Contact() {
                   <div className="font-bold">amuaaz872@gmail.com</div>
                 </div>
               </a>
-              <a href="https://wa.me/923197765190" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-6 p-4 rounded-3xl bg-white/5 border border-white/5 hover:border-brand/40 transition-colors cursor-pointer">
+              <a href="https://wa.me/923021414977" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-6 p-4 rounded-3xl bg-white/5 border border-white/5 hover:border-brand/40 transition-colors cursor-pointer">
                 <div className="w-12 h-12 rounded-full bg-brand/10 flex items-center justify-center text-brand">
                   <MessageCircle size={20} />
                 </div>
                 <div>
                   <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-[0.2em]">WhatsApp</div>
-                  <div className="font-bold">+923197765190</div>
+                  <div className="font-bold">+923021414977</div>
                 </div>
               </a>
             </div>

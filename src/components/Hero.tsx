@@ -48,7 +48,7 @@ export default function Hero() {
               
               <div className="flex flex-wrap gap-4">
                 <a 
-                  href="https://wa.me/923197765190" 
+                  href="https://wa.me/923021414977" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="px-8 py-4 bg-white text-blue-600 rounded-full font-bold hover:bg-blue-50 transition-colors shadow-lg"
@@ -93,7 +93,7 @@ export default function Hero() {
             className="md:col-span-2"
           >
             <motion.a
-              href="https://wa.me/923197765190"
+              href="https://wa.me/923021414977"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
