@@ -19,9 +19,10 @@ export default function Navbar() {
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-2xl font-bold font-display"
+          className="flex items-center space-x-3 text-2xl font-bold font-display"
         >
-          NovaWeb<span className="text-brand">.</span>
+          <img src="/logo.png" alt="Smart Web Solutions Logo" className="h-8 w-auto object-contain" />
+          <span>Smart Web Solutions<span className="text-brand">.</span></span>
         </motion.div>
 
         {/* Desktop Nav */}

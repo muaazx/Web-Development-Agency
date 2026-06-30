@@ -5,7 +5,7 @@ const testimonials = [
   {
     name: 'Muneeb Ahmed',
     role: 'Founder, TechLahore',
-    content: 'NovaWeb Studio transformed our digital presence. Their attention to detail and technical prowess is unmatched. We saw a 3x increase in conversions within months.',
+    content: 'Smart Web Solutions transformed our digital presence. Their attention to detail and technical prowess is unmatched. We saw a 3x increase in conversions within months.',
     avatar: '/images/testimonials/man1.jpg',
     rating: 5
   },
@@ -19,21 +19,21 @@ const testimonials = [
   {
     name: 'Zubair Qureshi',
     role: 'Marketing Head, Islamabad Solutions',
-    content: 'Working with NovaWeb was a breeze. They delivered ahead of schedule and the final result exceeded our wildest expectations.',
+    content: 'Working with Smart Web Solutions was a breeze. They delivered ahead of schedule and the final result exceeded our wildest expectations.',
     avatar: '/images/testimonials/man2.jpg',
     rating: 5
   },
   {
     name: 'Saima Malik',
     role: 'Product Manager at Faisalabad Textiles',
-    content: 'The level of professionalism and creativity shown by NovaWeb is outstanding. They really know how to build for the modern web.',
+    content: 'The level of professionalism and creativity shown by Smart Web Solutions is outstanding. They really know how to build for the modern web.',
     avatar: '/images/testimonials/woman2.jpg',
     rating: 5
   },
   {
     name: 'Usman Ghani',
     role: 'CTO, Peshawar Innovations',
-    content: 'Choosing NovaWeb was the best decision for our rebranding. Their technical stack is cutting-edge and the results speak for themselves.',
+    content: 'Choosing Smart Web Solutions was the best decision for our rebranding. Their technical stack is cutting-edge and the results speak for themselves.',
     avatar: '/images/testimonials/man3.jpg',
     rating: 5
   },

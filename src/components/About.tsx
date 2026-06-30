@@ -56,10 +56,10 @@ export default function About() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl lg:text-5xl font-bold mb-8">
-              We are <span className="text-brand">NovaWeb Studio</span>. A collective of designers & builders.
+              We are <span className="text-brand">Smart Web Solutions</span>. A collective of designers & builders.
             </h2>
             <p className="text-gray-400 text-lg mb-10 leading-relaxed">
-              Founded in 2020, NovaWeb was born from a simple observation: most business websites are either beautiful but broken, or functional but forgettable. We bridge that gap.
+              Founded in 2020, Smart Web Solutions was born from a simple observation: most business websites are either beautiful but broken, or functional but forgettable. We bridge that gap.
             </p>
             
             <div className="space-y-8">

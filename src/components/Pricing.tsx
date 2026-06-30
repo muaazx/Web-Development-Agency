@@ -139,7 +139,7 @@ export default function Pricing() {
 
               <a
                 href={`https://wa.me/923197765190?text=${encodeURIComponent(
-                  `Hi NovaWeb, I would like to request a quote for the "${plan.name}".`
+                  `Hi Smart Web Solutions, I would like to request a quote for the "${plan.name}".`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"

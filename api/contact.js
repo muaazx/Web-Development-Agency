@@ -27,11 +27,11 @@ module.exports = async function handler(req, res) {
       from: 'onboarding@resend.dev',
       to: 'amuaaz872@gmail.com',
       replyTo: email,
-      subject: '[NovaWeb Contact] ' + (subject || 'New Message') + ' from ' + name,
+      subject: '[Smart Web Solutions Contact] ' + (subject || 'New Message') + ' from ' + name,
       html:
         '<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:24px;background:#18181b;color:#f4f4f5;border-radius:12px;">' +
         '<h2 style="color:#a78bfa;">New Contact Form Submission</h2>' +
-        '<p style="color:#71717a;">Via NovaWeb Studio website</p>' +
+        '<p style="color:#71717a;">Via Smart Web Solutions website</p>' +
         '<table style="width:100%;border-collapse:collapse;">' +
         '<tr><td style="padding:10px 0;border-bottom:1px solid #27272a;color:#a1a1aa;width:100px;font-size:13px;">NAME</td>' +
         '<td style="padding:10px 0;border-bottom:1px solid #27272a;font-weight:bold;">' + name + '</td></tr>' +

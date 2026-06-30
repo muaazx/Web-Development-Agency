@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row justify-between gap-16 mb-20">
           <div className="max-w-sm">
             <div className="text-3xl font-bold font-display mb-6">
-              NovaWeb<span className="text-brand">.</span>
+              Smart Web Solutions<span className="text-brand">.</span>
             </div>
             <p className="text-gray-500 mb-8 leading-relaxed">
               We build high-converting websites for businesses ready to scale. Based in Pakistan, working globally.
@@ -44,7 +44,7 @@ export default function Footer() {
 
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-gray-600 text-sm italic">
-            © 2026 NovaWeb Studio. All rights reserved. Built with passion.
+            © 2026 Smart Web Solutions. All rights reserved. Built with passion.
           </div>
           <button 
             onClick={scrollToTop}
