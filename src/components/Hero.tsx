@@ -62,7 +62,7 @@ export default function Hero() {
           {/* Quick Stats Card */}
           <GlareHover
             width="100%"
-            height="auto"
+            height="100%"
             background="transparent"
             borderColor="transparent"
             borderRadius="2rem"
@@ -74,7 +74,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="bento-card-white flex flex-col justify-center items-center p-8 text-center"
+              className="bento-card-white flex flex-col justify-center items-center p-8 text-center h-full"
             >
               <div className="text-6xl font-black text-black">150+</div>
               <div className="text-sm font-bold text-gray-500 uppercase tracking-widest mt-2">Projects Delivered</div>
@@ -84,7 +84,7 @@ export default function Hero() {
           {/* CTA / Contact Mini Card */}
           <GlareHover
             width="100%"
-            height="auto"
+            height="100%"
             background="transparent"
             borderColor="transparent"
             borderRadius="2rem"
@@ -99,7 +99,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="bento-card p-8 flex items-center justify-between group cursor-pointer hover:border-brand transition-colors flex"
+              className="bento-card p-8 flex items-center justify-between group cursor-pointer hover:border-brand transition-colors h-full flex"
             >
               <div className="flex items-center space-x-6">
                 <div className="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center">
