@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { ArrowUp } from 'lucide-react';
+import Antigravity from './Antigravity';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -7,8 +8,29 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-black pt-24 pb-12 border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6">
+    <footer className="relative bg-black pt-24 pb-12 border-t border-white/5 overflow-hidden">
+      {/* Background 3D Antigravity Particle Field */}
+      <div className="absolute inset-0 z-0 opacity-30">
+        <Antigravity
+          count={300}
+          magnetRadius={10}
+          ringRadius={10}
+          waveSpeed={0.4}
+          waveAmplitude={1}
+          particleSize={2}
+          lerpSpeed={0.1}
+          color="#2563eb"
+          autoAnimate={false}
+          particleVariance={1}
+          rotationSpeed={0}
+          depthFactor={1}
+          pulseSpeed={3}
+          particleShape="capsule"
+          fieldStrength={10}
+        />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row justify-between gap-16 mb-20">
           <div className="max-w-sm">
             <div className="text-3xl font-bold font-display mb-6">
