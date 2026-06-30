@@ -11,7 +11,7 @@ export default function Hero() {
           {/* Main Hero Card */}
           <GlareHover
             width="100%"
-            height="100%"
+            height="auto"
             background="transparent"
             borderColor="transparent"
             borderRadius="2.5rem"
@@ -23,7 +23,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="bg-gradient-to-br from-blue-600 to-indigo-900 rounded-[2.5rem] p-10 lg:p-14 flex flex-col justify-end relative overflow-hidden min-h-[500px] h-full"
+              className="bg-gradient-to-br from-blue-600 to-indigo-900 rounded-[2.5rem] p-10 lg:p-14 flex flex-col justify-end relative overflow-hidden min-h-[500px]"
             >
               <div className="absolute top-10 right-10 opacity-10">
                 <svg width="200" height="200" viewBox="0 0 24 24" fill="currentColor">
@@ -62,7 +62,7 @@ export default function Hero() {
           {/* Quick Stats Card */}
           <GlareHover
             width="100%"
-            height="100%"
+            height="auto"
             background="transparent"
             borderColor="transparent"
             borderRadius="2rem"
@@ -74,15 +74,14 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="bento-card-white flex flex-col justify-center items-center p-8 text-center h-full"
+              className="bento-card-white flex flex-col justify-center items-center p-8 text-center"
             >
               <div className="text-6xl font-black text-black">150+</div>
               <div className="text-sm font-bold text-gray-500 uppercase tracking-widest mt-2">Projects Delivered</div>
             </motion.div>
           </GlareHover>
 
-          {/* Scroll Stack Banners Card */}
-          <div className="md:col-span-1 md:row-span-1 bento-card overflow-hidden h-[240px] md:h-auto min-h-[240px] relative">
+          <div className="md:col-span-1 md:row-span-1 bento-card overflow-hidden h-[160px] relative">
             <ScrollStack
               itemDistance={16}
               itemScale={0.03}
@@ -140,10 +139,9 @@ export default function Hero() {
             </ScrollStack>
           </div>
 
-          {/* CTA / Contact Mini Card */}
           <GlareHover
             width="100%"
-            height="100%"
+            height="auto"
             background="transparent"
             borderColor="transparent"
             borderRadius="2rem"
@@ -158,7 +156,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="bento-card p-8 flex items-center justify-between group cursor-pointer hover:border-brand transition-colors h-full w-full flex"
+              className="bento-card p-8 flex items-center justify-between group cursor-pointer hover:border-brand transition-colors flex"
             >
               <div className="flex items-center space-x-6">
                 <div className="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center">
