@@ -1,6 +1,6 @@
-# NovaWeb Studio - Premium Web Development Agency
+# NextGenDevelopers - Premium Web Development Agency
 
-This is a modern, high-performance landing page for NovaWeb Studio, built with React, Vite, Tailwind CSS, and Framer Motion.
+This is a modern, high-performance landing page for NextGenDevelopers, built with React, Vite, Tailwind CSS, and Framer Motion.
 
 ## Features
 
@@ -51,4 +51,4 @@ This project is ready to be deployed on Vercel or Netlify.
 
 ---
 
-Built with passion by NovaWeb Studio.
+Built with passion by NextGenDevelopers.

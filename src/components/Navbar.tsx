@@ -21,7 +21,7 @@ export default function Navbar() {
           animate={{ opacity: 1, x: 0 }}
           className="text-2xl font-bold font-display"
         >
-          Smart Web Solutions<span className="text-brand">.</span>
+          NextGenDevelopers<span className="text-brand">.</span>
         </motion.div>
 
         {/* Desktop Nav */}

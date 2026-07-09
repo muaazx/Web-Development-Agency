@@ -139,7 +139,7 @@ export default function Pricing() {
 
               <a
                 href={`https://wa.me/923021414977?text=${encodeURIComponent(
-                  `Hi Smart Web Solutions, I would like to request a quote for the "${plan.name}".`
+                  `Hi NextGenDevelopers, I would like to request a quote for the "${plan.name}".`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
