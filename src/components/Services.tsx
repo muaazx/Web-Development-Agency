@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Layout, Palette, ShoppingBag, Search, Terminal, Megaphone, TrendingUp } from 'lucide-react';
+import { Layout, Palette, ShoppingBag, Search, Terminal, Megaphone, TrendingUp, Smartphone } from 'lucide-react';
 import ElectricBorder from './ElectricBorder';
 
 const services = [
@@ -38,6 +38,12 @@ const services = [
     description: 'Analytical reviews, A/B testing, and high-performance landing pages tuned to turn visitors into brand advocates.',
     icon: TrendingUp,
     color: 'text-emerald-500'
+  },
+  {
+    title: 'Native Android App Development',
+    description: 'Modern Android apps built with Kotlin and Java, optimized for performance and user experience.',
+    icon: Smartphone,
+    color: 'text-green-500'
   }
 ];
 
